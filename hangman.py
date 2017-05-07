@@ -56,7 +56,7 @@ from random import choice
 import os
 import time
 import sys
-
+import platform
 
 def welcome():
     '''
@@ -77,7 +77,10 @@ def clear():
     '''
     This applies for Linux/Mac, use 'cls' in place of 'clear' for Windows
     '''
-    os.system('clear')
+    if platform.system() == 'Windows':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 
 def get_secret_word():
